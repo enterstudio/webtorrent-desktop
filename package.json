@@ -47,7 +47,8 @@
     "vlc-command": "^1.0.1",
     "webtorrent": "0.x",
     "winreg": "^1.2.0",
-    "zero-fill": "^2.2.3"
+    "zero-fill": "^2.2.3",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "buble": "^0.15.2",
@@ -106,6 +107,9 @@
     "test": "standard && depcheck --ignores=buble,nodemon,gh-release --ignore-dirs=build,dist && node ./bin/extra-lint.js",
     "test-integration": "npm run build && node ./test",
     "update-authors": "./bin/update-authors.sh",
-    "watch": "nodemon --exec \"npm run start\" --ext js,css --ignore build/ --ignore dist/"
-  }
+    "watch": "nodemon --exec \"npm run start\" --ext js,css --ignore build/ --ignore dist/",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
